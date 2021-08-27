@@ -1,7 +1,8 @@
 class Tweet < ApplicationRecord
-  has_many :topic_tweets
-  has_many :topics, through :topic_tweets
-  
+  belongs_to :users
+  has_many :tweet_topics
+  has_many :topics, through: :tweet_topics
+  has_many :replies
   validates :tweet, presence: true,
-                    length: {maximum: 140}
+                    length: {minimum: 3, maximum: 140}
 end
