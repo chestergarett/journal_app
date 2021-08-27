@@ -1,4 +1,10 @@
 <h1>show tweet details </h1>
 
-<h5>test extraction of details </h5>
 <p><%=@tweet.tweet%></p>
+<p><%=@tweet.user.email%></p>
+
+
+<p><%=link_to 'Show all', tweets_path %></p>
+<p><%=link_to 'New', new_tweet_path %></p>
+<p><%=link_to 'Edit', edit_tweet_path(@tweet) %></p>
+<p><%=link_to 'Delete', tweet_path(@tweet), method: :delete, data: { confirm: "Are you sure you want to delete?"} %></p>

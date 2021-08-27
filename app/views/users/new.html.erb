@@ -1,0 +1,34 @@
+<h1>sign up </h1>
+
+<% if @user.errors.any?%>
+    <h4> Errors in signing up </h4>
+    <ul>
+        <%@user.errors.full_messages.each do |msg| %>
+            <li><%= msg%></li>
+        <%end %>
+    </ul>
+<%end%>
+<%= form_with(model: @user, local: true) do |f|%>
+
+    <p>
+        <%=f.label :username%>
+        <%=f.text_field :username%>
+    </p>
+
+    <p>
+        <%=f.label :email%>
+        <%=f.email_field :email%>
+    </p>
+
+    <p>
+        <%=f.label :password%>
+        <%=f.password_field :password%>
+    </p>
+
+    <button>Create</button>
+<%end%>
+
+<p><%=link_to 'root', tweets_path %></p>
+
+
+

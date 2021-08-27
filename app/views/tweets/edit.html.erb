@@ -1,4 +1,5 @@
-<h1>show new tweet </h1>
+<h1>edit tweet </h1>
+<p>by: <%=@tweet.user.email%></p>
 
 <% if @tweet.errors.any?%>
     <h4> Errors in tweeting </h4>
@@ -8,17 +9,15 @@
         <%end %>
     </ul>
 <%end%>
-<%= form_with scope: :tweet, url: tweets_path, local: true do |f|%>
+<%= form_with(model: @tweet, local: true) do |f|%>
 
     <p>
         <%=f.label :tweet%>
         <%=f.text_area :tweet%>
     </p>
 
-    <button>Post</button>
+    <button>Edit</button>
 <%end%>
-
-<p><%=link_to 'Show all', tweets_path %></p>
-
+<p><%=link_to 'Show all', tweets_path%> </p>
 
 
