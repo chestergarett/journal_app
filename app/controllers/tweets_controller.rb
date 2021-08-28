@@ -14,7 +14,7 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(tweet_params)
-    @tweet.user = User.first
+    @tweet.user = current_user
     if @tweet.save
       flash[:notice] = "Tweet has been posted"
       redirect_to @tweet
