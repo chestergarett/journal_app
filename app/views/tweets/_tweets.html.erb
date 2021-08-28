@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <th>Tweet</th>
+            <th colspan='3'>Actions</th>
+            <th>By</th>
+        </tr>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+        <%@tweets.each do |tweet|%>
+            <tr>
+                <td><%=tweet.tweet%></td>
+                <td><%=link_to 'Show', tweet_path(tweet)%> </td>
+                <td><%=link_to 'Edit', edit_tweet_path(tweet)%> </td>
+                <td><%=link_to 'Delete', tweet_path(tweet), method: :delete, data: { confirm: "Are you sure you want to delete?"}%> </td>
+                <td><%=tweet.user.email%></td>
+            </tr>
+            
+        <%end%>
+    </tbody>
+</table>

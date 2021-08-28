@@ -1,4 +1,4 @@
-<h1>sign up </h1>
+<h1>Edit your profile</h1>
 
 <% if @user.errors.any?%>
     <h4> Errors in signing up </h4>
@@ -25,7 +25,7 @@
         <%=f.password_field :password %>
     </p>
 
-    <button>Create</button>
+    <button>Edit profile</button>
 <%end%>
 
 <p><%=link_to 'root', tweets_path %></p>

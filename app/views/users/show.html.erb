@@ -1,0 +1,8 @@
+
+<h5><%= @user.username%></h5>
+<p><%= @user.email%></p>
+
+<%=link_to 'Index', users_path%>
+
+<p>List of tweets </p>
+<%=render 'tweets/tweets'%>
