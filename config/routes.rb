@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'pages#home'
+  
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
 
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy', to: 'sessions#destroy'
   
   resources :tweets
-  root 'tweets#index'
+  
   
   resources :topics
   resources :replies

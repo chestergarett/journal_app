@@ -13,8 +13,12 @@
             <tr>
                 <td><%=tweet.tweet%></td>
                 <td><%=link_to 'Show', tweet_path(tweet)%> </td>
-                <td><%=link_to 'Edit', edit_tweet_path(tweet)%> </td>
-                <td><%=link_to 'Delete', tweet_path(tweet), method: :delete, data: { confirm: "Are you sure you want to delete?"}%> </td>
+                <%if logged_in? && tweet.user == current_user%>
+                    <td><%=link_to 'Edit', edit_tweet_path(tweet)%> </td>
+                    <td><%=link_to 'Delete', tweet_path(tweet), method: :delete, data: { confirm: "Are you sure you want to delete?"}%> </td>
+                <%end%>
+                <td></td>
+                <td></td>
                 <td><%=tweet.user.email%></td>
             </tr>
             

@@ -4,5 +4,9 @@
 
 <%=link_to 'Index', users_path%>
 
+<%if logged_in? && @user==current_user%>
+    <%=link_to "Edit profile", edit_user_path(@user)%>
+<%end%>
+
 <p>List of tweets </p>
-<%=render 'tweets/tweets'%>
+<%=render 'tweets/tweet'%>

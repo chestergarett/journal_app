@@ -6,5 +6,8 @@
 
 <p><%=link_to 'All tweets', tweets_path %></p>
 <p><%=link_to 'New', new_tweet_path %></p>
-<p><%=link_to 'Edit', edit_tweet_path(@tweet) %></p>
-<p><%=link_to 'Delete', tweet_path(@tweet), method: :delete, data: { confirm: "Are you sure you want to delete?"} %></p>
+<% if logged_in? && @tweet.user==current_user%>
+    <p><%=link_to 'Edit', edit_tweet_path(@tweet) %></p>
+    <p><%=link_to 'Delete', tweet_path(@tweet), method: :delete, data: { confirm: "Are you sure you want to delete?"} %></p>
+<%end%>
+

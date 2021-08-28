@@ -1,5 +1,7 @@
 class TweetsController < ApplicationController
   before_action :setup, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     @tweets = Tweet.all
@@ -48,6 +50,13 @@ class TweetsController < ApplicationController
 
   def tweet_params
     params.require(:tweet).permit(:tweet)
+  end
+
+  def require_same_user
+    if current_user != @tweet.user
+      flash[:alert] = "You don't have rights to view this page."
+      redirect_to @tweet
+    end
   end
 end
 
