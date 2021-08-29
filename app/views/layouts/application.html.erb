@@ -8,14 +8,14 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application' %>
   </head>
 
   <body>
     <% flash.each do |name,msg| %>
       <%=msg%>
     <%end%>
-    <%= react_component("HelloWorld", {greeting: "Hello"})%>
     <%= yield %>
+    <%= react_component("HelloWorld", prerender: true)%>
+    <%= react_component("Test", prerender: true)%>
   </body>
 </html>

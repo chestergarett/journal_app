@@ -26,6 +26,9 @@ gem 'jbuilder', '~> 2.7'
 
 #gem for react rails
 gem 'react-rails'
+
+#gem for api
+gem 'fast_jsonapi'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy', to: 'sessions#destroy'
   
   resources :tweets
-  
-  
   resources :topics
   resources :replies
+
+  get '*path', to: 'pages#home', via: :all
 end
