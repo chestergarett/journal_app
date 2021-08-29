@@ -20,8 +20,12 @@
                 <td></td>
                 <td></td>
                 <td><%=tweet.user.email%></td>
+                <td>
+                    <% if tweet.topics.any?%>
+                        <%=render tweet.topics%>
+                    <%end%>
+                </td>
             </tr>
-            
         <%end%>
     </tbody>
 </table>

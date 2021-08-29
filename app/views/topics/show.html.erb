@@ -1,0 +1,9 @@
+<h1>show category</h1>
+
+<p><%=@topic.topic%></p>
+
+<%if @tweets.any?%>
+    <%@tweets.each do |tweet|%>
+        <span><%=tweet.tweet%></span><br>
+    <%end%>
+<%end%>

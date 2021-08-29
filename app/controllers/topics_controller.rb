@@ -8,6 +8,11 @@ class TopicsController < ApplicationController
     @topic = Topic.new
   end
 
+  def show
+    @topic = Topic.find(params[:id])
+    @tweets = @topic.tweets.all
+  end
+
   def create
     @topic = Topic.new(topic_params)
     if @topic.save

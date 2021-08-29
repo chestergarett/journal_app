@@ -2,7 +2,9 @@
 
 <p><%=@tweet.tweet%></p>
 <p><%=@tweet.user.email%></p>
-
+<% if @tweet.topics.any?%>
+    <%=render @tweet.topics%>
+<%end%>
 
 <p><%=link_to 'All tweets', tweets_path %></p>
 <p><%=link_to 'New', new_tweet_path %></p>

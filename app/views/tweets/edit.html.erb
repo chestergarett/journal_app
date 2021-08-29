@@ -16,6 +16,11 @@
         <%=f.text_area :tweet%>
     </p>
 
+    <p>
+        <%=f.label :topic%>
+        <%=f.collection_select(:topic_ids, Topic.all, :id, :topic, {prompt: "Make selection from list below"}, {multiple: true})%>
+    </p>
+
     <button>Edit</button>
 <%end%>
 <p><%=link_to 'Show all', tweets_path%> </p>
