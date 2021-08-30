@@ -5,14 +5,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-
-    render json: UserSerializer.new(@users).serialized_json
   end
 
   def show
     @tweets = @user.tweets
-
-    render json: UserSerializer.new(@tweets).serialized_json
   end
 
   def new
@@ -51,7 +47,7 @@ class UsersController < ApplicationController
   end
   
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 
   def require_same_user
