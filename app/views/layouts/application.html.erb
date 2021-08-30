@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JournalAppV2</title>
+    <title>Bwitter. | It's what's happening.</title>
+    <link rel="shortcut icon" href="//abs.twimg.com/favicons/twitter.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,7 +16,5 @@
       <%=msg%>
     <%end%>
     <%= yield %>
-    <%= react_component("HelloWorld", prerender: true)%>
-    <%= react_component("Test", prerender: true)%>
   </body>
 </html>

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap');
+
+.mainContainer{
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bodyContainer{
+    display: flex;
+    flex-basis: 95%;
+    width: 100%;
+    background: black
+}
+
+.bodyLogo{
+    flex-basis: 50%;
+    height:100%;
+    background: url("https://abs.twimg.com/sticky/illustrations/lohp_en_1302x955.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bodyLogoMain{
+    fill: white;
+    color: white;
+    width: 50%;
+}
+
+.bodyLinks{
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3rem;
+}
+
+.bodyLinkLogo{
+    width: 30%;
+    height: 30%;
+    fill: white;
+    color: white;
+}
+
+.linkHeading{
+    margin-top: -8rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.linkHeading h2{
+    font-weight: 900;
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+.linkHeading p{
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: -1rem;
+}
+
+.linkButtons{
+    display: flex;
+    flex-direction: column;
+}
+
+.linkButtonsMain{
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: black;
+    background: whitesmoke;
+    width: 50%;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.linkButtonsIcons{
+    margin-right: 1rem;
+    font-size: 20px;
+}
+
+.linkInstructions{
+    font-size: 12px;
+    color: #899499;
+    width: 50%;
+    line-height: 1.5;
+}
+
+.linkInstructions p span{
+    color: #00acee;
+}
+
+.linkLogin{
+    font-size: 15px;
+}
+.linkLogin p a{
+    color: #00acee;
+}
+
+.footerContainer{
+    width: 100%;
+    flex-basis: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #899499;
+    font-size: 12px;
+    font-weight: 100;
+}
