@@ -1,3 +1,190 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.loginContainer{
+    background: black;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.loginBody{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 7rem;
+    justify-content: center;
+}
+
+.loginLogoMain{
+    fill: white;
+    width: 50px;
+    height: 50px;
+}
+
+.loginHeader{
+    font-size: 30px;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.loginForm input{
+    padding: 1rem;
+    border-radius: 5px; 
+    background: transparent;
+    color: white;
+    margin-top: .5rem;
+    margin-bottom: 1rem;  
+    box-shadow: none;
+    border: .5px solid gray;
+    width: 50%;
+}
+
+.loginForm input:focus{
+    outline: 1px solid #00acee;
+    border: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px black inset !important;
+ -webkit-text-fill-color: white !important;
+}
+
+.loginButton{
+    width: 30%;
+    border-radius: 9999px;
+    padding: 1rem;  
+    background: #00acee;
+    color: white;
+    border: none; 
+    cursor: pointer;
+}
+
+.loginFooter{
+    margin-top: 1rem;
+    font-size: 12px;
+}
+
+.loginFooter span:first-child,
+.loginFooter span:last-child{
+    color: #00acee;
+}
+
+.signupBackdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 20;
+    background-color: rgba(0,0,0,.7);
+    color: white;
+}
+
+.signupModal{
+    position: fixed;
+    background: #36454F;
+    padding: 3rem;
+    border-radius: 15px;
+    top: 20%;
+    left: 35%;
+    width: 20%;
+}
+
+.closeButton{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 15px;
+    margin-top: -2rem;
+    margin-right: -1rem;
+    color: black;
+    font-weight: bold;
+}
+
+.signupLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signupLogoMain{
+    fill: white;
+    width: 40px;
+    height: 40px;
+}
+
+.signupFormMain{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.signupItems{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.signupLabel{
+    margin-bottom: .5rem;
+    font-size: 12px;
+}
+
+.signupItems input{
+    width: 90%;
+    padding: .5rem;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    box-shadow: none;
+    border: .5px solid gray;
+}
+
+.signupItems input:focus{
+    outline: 1px solid #00acee;
+    border: none;
+}
+
+.signupItems input:-webkit-autofill,
+.signupItems input:-webkit-autofill:hover, 
+.signupItems input:-webkit-autofill:focus, 
+.signupItems input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px #36454F inset !important;
+ -webkit-text-fill-color: white !important;
+}
+
+.signUpButton{
+    width: 50%;
+    border-radius: 9999px;
+    padding: 1rem;  
+    background: black;
+    color: white;
+    border: none; 
+    cursor: pointer;
+}
+
+.signupErrors{
+    list-style-type: none;
+    margin: 0;
+    padding: .5rem;
+    margin-bottom: .5rem;
+    line-height: 1.5;
+    font-size: 12px;
+    outline: 1px solid #00acee;
+}
+
+

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       flash[:notice] = "Successfully logged in."
-      redirect_to user
+      redirect_to tweets_path
     else
       flash.now[:alert] = "There was something wrong with your login details."
       render 'new'
