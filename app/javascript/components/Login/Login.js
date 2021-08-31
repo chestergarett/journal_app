@@ -20,7 +20,9 @@ const Login = () => {
             </Button>
          </div>
          <div className={classes.footerContainer}>
-             
+             <span>Forgot password?&nbsp;</span>
+             <span>&#183;</span>
+             <span>&nbsp;Sign up for Bwitter</span>
          </div>
      </div>   
     )
