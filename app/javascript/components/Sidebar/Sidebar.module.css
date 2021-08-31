@@ -1,0 +1,76 @@
+.sidebar{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 3rem;
+}
+
+.upperSidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+    font-size: 20px;
+}
+
+.items{
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: .3rem;
+    border-radius: 9999px;
+}
+
+.items2{
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: .3rem;
+    border-radius: 9999px;
+}
+
+.items:hover{
+    background: #36454F;
+    width: 80%;
+    padding: .3rem;
+}
+
+.icons{
+    margin-right: 1rem;
+}
+
+.itemButton{
+    padding: 1rem;
+    width: 80%;
+    border-radius: 9999px;
+    border: none;
+    background: #00acee;
+    color: white;
+    cursor: pointer;
+}
+
+.lowerSidebar{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lowerSidebar:hover{
+    background: #36454F;
+    border-radius: 9999px;
+    padding: .5rem;
+    width: 80%;
+}
+
+.profileDetails{
+    display: flex;
+    margin-left: .5rem;
+    flex-direction: column;
+}
+
+
+

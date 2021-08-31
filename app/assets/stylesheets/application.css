@@ -19,6 +19,8 @@
  body{
      margin: 0;
      font-family: 'Lato', sans-serif;
+     background: black;
+     color: white;
  }
 
  a{
@@ -30,5 +32,5 @@
      position: absolute;
      top: 5%;
      left: 25%;
-     color: white;
+     color: #00acee;
  }
