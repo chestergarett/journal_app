@@ -1,0 +1,50 @@
+.main{
+    background: #23272a;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 12px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.listItems{
+    margin-bottom: .5rem;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.listItems:hover{
+    background: black;
+    width: 80%;
+    padding: .3rem;
+    border-radius: 9999px;
+}
+
+.listItemText{
+    display: flex;
+    flex-direction: column;
+    margin-left: .5rem;
+    font-size: 10px;
+}
+
+.listItemName{
+    font-size: 14px;
+}
+
+.showMore{
+    margin-top: .5rem;
+    color: #00acee;
+    cursor: pointer;
+}
+
+.showMore:hover{
+    background: black;
+    width: 80%;
+    padding: .3rem;
+    border-radius: 9999px;
+}

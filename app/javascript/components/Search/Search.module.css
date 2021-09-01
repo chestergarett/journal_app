@@ -1,0 +1,16 @@
+.root{
+    padding: .3rem;
+    display: flex;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.input{
+    flex: 1;
+}
+
+.iconButton{
+    padding: 10;
+}

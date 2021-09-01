@@ -11,17 +11,39 @@
 .bodyIndexLeft{
     height: 100%;
     flex-basis: 20%;
-    border-right: .5px solid gray;
+    border-right: .5px solid #36454F;
 }
 
 .bodyIndexMid{
     height: 100%;
-    flex-basis: 60%;
+    flex-basis: 55%;
     overflow-y: scroll;
+}
+
+.bodyIndexMid__label{
+    font-size: 20px;
+    border-bottom: 1px solid #36454F;
+    padding: 1rem;
+}
+
+.bodyIndexMid__mainForm{
+    border-bottom: 1px solid #36454F;
+    padding: 1rem;
 }
 
 .bodyIndexRight{
     height: 100%;
-    flex-basis: 20%;
-    border-left: .5px solid gray;
+    flex-basis: 25%;
+    border-left: .5px solid #36454F;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+}
+
+.bodyIndexRight__main{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 1.5rem;
 }

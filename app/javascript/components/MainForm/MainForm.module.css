@@ -1,0 +1,57 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form{
+    display: flex;
+    width: 100%;
+    margin-bottom: .5rem;
+}
+
+.textField{
+    margin-left: .5rem;
+    color: #00acee;
+    width: 100%;
+    background: transparent;
+    font-size: 15px;
+    border: none;
+}
+
+.textField::placeholder{
+    color: gray;
+}
+
+.textField:focus{
+    outline: 1px solid #00acee;
+    border: none;
+}
+
+.iconGroup{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconItems{
+    color: #00acee;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+.iconButton{
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    padding: .5rem;
+    width: 5rem;
+    border-radius: 9999px;
+    border: none;
+    background: #00acee;
+    color: white;
+    cursor: pointer;
+}

@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all
     @topics = Topic.all
+    @users = User.all
   end
 
   def show

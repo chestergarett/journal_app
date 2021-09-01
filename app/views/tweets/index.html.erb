@@ -1,19 +1,21 @@
 <div class="bodyIndexTweet">
         <%=react_component("Sidebar/Sidebar", {logout: logout_path}, class: "bodyIndexLeft")%>
     <div class="bodyIndexMid">
-        <%if logged_in? %>
-            <p><%=link_to 'Logout', logout_path, method: :delete %></p>
-        <%else%>
-            <p><%=link_to 'Login', login_path %></p>
-        <%end%> 
-
-        <h1>show indexed tweets </h1>
+        <div class="bodyIndexMid__label">Home</div>
+        <div class="bodyIndexMid__mainForm">
+            <%=react_component("MainForm/MainForm", prerender: true)%>
+        </div>
         <%= render 'tweet'%>
-
-        <p><%=link_to 'New Tweet', new_tweet_path %></p>
-        <p><%=link_to 'All Tweets', tweets_path %></p>
-        <p><%=link_to 'All Users', users_path %></p>
     </div>
     <div class="bodyIndexRight">
+        <div class="bodyIndexRight__main">
+            <%=react_component("Search/Search", prerender: true)%>
+            <div class="category__index">
+                <%=react_component("Trending/Trending", {topics: @topics})%>
+            </div>
+            <div class="users__index">
+                <%=react_component("Followers/Followers", {users: @users})%>
+            </div>
+        </div>
     </div>
 </div>
