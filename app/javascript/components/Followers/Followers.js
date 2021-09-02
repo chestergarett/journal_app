@@ -19,7 +19,7 @@ const Followers = (props) => {
                     )
                 })}
             </ul>
-            <div className={classes.showMore}>Show More</div>
+            <div className={classes.showMore}>See More</div>
         </div>
     )
 }

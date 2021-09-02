@@ -1,0 +1,52 @@
+/* line 5, app/assets/stylesheets/tweets.scss */
+.bodyIndexTweet {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* line 11, app/assets/stylesheets/tweets.scss */
+.bodyIndexLeft {
+  height: 100%;
+  flex-basis: 20%;
+  border-right: .5px solid #36454F;
+}
+
+/* line 17, app/assets/stylesheets/tweets.scss */
+.bodyIndexMid {
+  height: 100%;
+  flex-basis: 55%;
+  overflow-y: scroll;
+}
+
+/* line 23, app/assets/stylesheets/tweets.scss */
+.bodyIndexMid__label {
+  font-size: 20px;
+  border-bottom: 1px solid #36454F;
+  padding: 1rem;
+}
+
+/* line 29, app/assets/stylesheets/tweets.scss */
+.bodyIndexMid__mainForm {
+  border-bottom: 1px solid #36454F;
+  padding: 1rem;
+}
+
+/* line 34, app/assets/stylesheets/tweets.scss */
+.bodyIndexRight {
+  height: 100%;
+  flex-basis: 25%;
+  border-left: .5px solid #36454F;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+/* line 44, app/assets/stylesheets/tweets.scss */
+.bodyIndexRight__main {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 1.5rem;
+}
