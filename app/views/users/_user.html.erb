@@ -1,0 +1,23 @@
+<%@users.each do |user|%>
+    <div class="tweet_container">
+        <div class="user_container">
+            <div class="tweet_container_main">
+                <%=react_component("MainTweet/Avatar", prerender: true)%>
+                <%=link_to user_path(user), class:"tweet_container_user" do %>
+                    <div class="tweet_container_user_head">
+                        <div>
+                            <span class="tweet_user"><%=user.username%></span>
+                            <span class="tweet_time_ago">Joined <%= time_ago_in_words(user.created_at)%>&nbsp;	ago</span>
+                        </div>
+                    </div>
+                    <div>
+                        <%=pluralize(user.tweets.count, "bweet")%>
+                    </div>
+                <%end%>
+            </div>
+            <%if user!=current_user%>
+                <button class="follow_button">Follow</button>
+            <%end%>
+        </div>
+    </div>
+<%end%>

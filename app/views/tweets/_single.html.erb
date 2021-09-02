@@ -1,0 +1,28 @@
+<div class="tweet_container">
+        <div class="tweet_container_main">
+            <%=react_component("MainTweet/Avatar", prerender: true)%>
+            <%=link_to tweet_path(@tweet), class:"tweet_container_user" do %>
+                <div class="tweet_container_user_head">
+                    <span class="tweet_user"><%=@tweet.user.username%></span>
+                    <span class="tweet_time_ago"><%= time_ago_in_words(@tweet.created_at)%></span>
+                </div>
+                <div>
+                    <%=@tweet.tweet%>
+                    <%if @tweet.topics.any?%>
+                        <%@tweet.topics.each do |topic|%>
+                            <span class="tweet_topic">#<%=topic.topic%></span>
+                        <%end%>   
+                    <%end%>
+                </div>
+            <%end%>
+        </div>
+        <div class="tweet_container_icons">
+            <%=react_component("MainTweet/Links", prerender: true)%>
+        </div>
+    </div>
+
+    <p><%=link_to 'New', new_tweet_path %></p>
+<% if logged_in? && @tweet.user==current_user%>
+    <p><%=link_to 'Edit', edit_tweet_path(@tweet) %></p>
+    <p><%=link_to 'Delete', tweet_path(@tweet), method: :delete, data: { confirm: "Are you sure you want to delete?"} %></p>
+<%end%>

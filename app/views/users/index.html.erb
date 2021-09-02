@@ -1,24 +1,18 @@
-<h4>list of users </h4>
-
-<table>
-<thead>
-    <tr>
-        <th>Username</th>
-        <th>Email</th>
-        <th colspan='3'>Actions</th>
-    </tr>
-</thead>
-<% @users.each do |user| %>
-    <tr>
-        <td><%=user.username%></td>
-        <td><%=user.email%></td>
-        <td><%=link_to "Show", user%></td>
-        <%if logged_in? && user == current_user%>
-            <td><%=link_to "Edit", edit_user_path(user)%></td>
-            <td><%=link_to "Delete", user_path(user), method: :delete, data: {confirm: "Are you sure you want to delete user?"}%></td>
-        <%end%>
-    </tr>
-<%end%>
-</table>
-
-<p><%=link_to 'All Tweets', tweets_path %></p>
+<div class="bodyIndexTweet">
+        <%=react_component("Sidebar/Sidebar", {logout: logout_path}, class: "bodyIndexLeft")%>
+    <div class="bodyIndexMid">
+        <div class="bodyIndexMid__label">Connect</div>
+         <%=render 'user'%>
+    </div>
+    <div class="bodyIndexRight">
+        <div class="bodyIndexRight__main">
+            <%=react_component("Search/Search", prerender: true)%>
+            <div class="category__index">
+                <%=react_component("Trending/Trending", {topics: @topics})%>
+            </div>
+            <div class="users__index">
+                <%=react_component("Followers/Followers", {users: @users})%>
+            </div>
+        </div>
+    </div>
+</div>

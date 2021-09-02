@@ -13,14 +13,16 @@ const Trending = (props) => {
             <div className={classes.mainTopics}>
                 {props.topics.map(topic=>{
                     return(
-                        <div key={topic.topic} id={topic.topic} className={classes.items}>
-                            <span>{topic.topic}</span>
-                            <span>{topic.topic.tweets}</span>
-                        </div>
+                        <a href={`/topics/${topic.id}`} key={topic.topic} >
+                            <div id={topic.topic} className={classes.items}>
+                                <span>{topic.topic}</span>
+                                <span>{topic.topic.tweets}</span>
+                            </div>
+                        </a>
                     )
                 })}
             </div>
-            <div className={classes.showMore}>Show More </div>
+            <a href="/topics" className={classes.showMore}>Show More </a>
         </div>            
     )
 }

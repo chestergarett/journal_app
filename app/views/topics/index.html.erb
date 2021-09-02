@@ -1,4 +1,25 @@
-
-<h1>Topics</h1>
-
-<%= render 'topic'%>
+<div class="bodyIndexTweet">
+        <%=react_component("Sidebar/Sidebar", {logout: logout_path}, class: "bodyIndexLeft")%>
+    <div class="bodyIndexMid">
+        <div class="bodyIndexMid__label">Trends</div>
+        <%@topics.each do |topic|%>
+        <div class="bodyIndexMid__mainForm">
+            <%=link_to topic_path(topic), class: "topics_index" do%>
+                <h2>#<%=topic.topic%></h2>
+                <span><%=topic.tweets.count%>&nbsp; Bweets</span>
+            <%end%>
+        </div>  
+        <%end%>  
+    </div>
+    <div class="bodyIndexRight">
+        <div class="bodyIndexRight__main">
+            <%=react_component("Search/Search", prerender: true)%>
+            <div class="category__index">
+                <%=react_component("Trending/Trending", {topics: @topics})%>
+            </div>
+            <div class="users__index">
+                <%=react_component("Followers/Followers", {users: @users})%>
+            </div>
+        </div>
+    </div>
+</div>

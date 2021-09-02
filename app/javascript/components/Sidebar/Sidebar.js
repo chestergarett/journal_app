@@ -13,10 +13,10 @@ const Sidebar = (props) => {
                 <div className={classes.items2}>
                     <FaTwitter size={30} className={classes.icons}/>
                 </div>
-                <div className={classes.items}>
+                <a className={classes.items} href='/'>
                     <RiHome7Fill size={30} className={classes.icons}/>
                     <span>Home</span>
-                </div>
+                </a>
                 <div className={classes.items}>
                     <FaHashtag size={30} className={classes.icons}/>
                     <span>Explore</span>

@@ -1,0 +1,15 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    cursor: pointer;
+}
+
+.icons{
+    color: #36454F
+}
+
+.icons:hover{
+    color: #00acee;
+}

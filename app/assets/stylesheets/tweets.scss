@@ -47,3 +47,48 @@
     width: 80%;
     margin-left: 1.5rem;
 }
+
+/* ---- main tweet body  -------   */
+
+.tweet_container{
+    border-bottom: .5px solid #36454F;
+    padding: 1rem;
+}
+
+.tweet_container_main{
+    margin-bottom: .5rem;
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+}
+
+.tweet_container_user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+}
+
+.tweet_container_icons{
+    margin-left: 2rem;
+}
+
+.tweet_container_user_head{
+    display: flex;
+    margin-bottom: .5rem;
+}
+
+.tweet_user{
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.tweet_time_ago{
+    font-size: 12px;
+    color: #A9A9A9;
+}
+
+.tweet_topic{
+    color: #00acee;
+}

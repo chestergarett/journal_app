@@ -4,6 +4,13 @@
     <p><%=link_to 'Login', login_path %></p>
 <%end%> 
 
+<%if logged_in? && tweet.user == current_user%>
+    <div><%=link_to 'Show', tweet_path(tweet)%> </div>
+    <div><%=link_to 'Edit', edit_tweet_path(tweet)%> </div>
+    <div><%=link_to 'Delete', tweet_path(tweet), method: :delete, data: { confirm: "Are you sure you want to delete?"}%> </div>
+<%end%>
+
+
 <p><%=link_to 'New Tweet', new_tweet_path %></p>
 <p><%=link_to 'All Tweets', tweets_path %></p>
 <p><%=link_to 'All Users', users_path %></p>

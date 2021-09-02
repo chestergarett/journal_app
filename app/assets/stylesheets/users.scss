@@ -188,3 +188,18 @@ input:-webkit-autofill:active
 }
 
 
+/****** users index ******/
+.user_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+}
+
+.follow_button{
+    border-radius: 9999px;
+    padding: .7rem;
+    border: none;
+    margin-right: 1rem;
+}
+
+

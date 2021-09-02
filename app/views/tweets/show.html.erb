@@ -1,15 +1,21 @@
-<h1>show tweet details </h1>
-
-<p><%=@tweet.tweet%></p>
-<p><%=@tweet.user.email%></p>
-<% if @tweet.topics.any?%>
-    <%=render @tweet.topics%>
-<%end%>
-
-<p><%=link_to 'All tweets', tweets_path %></p>
-<p><%=link_to 'New', new_tweet_path %></p>
-<% if logged_in? && @tweet.user==current_user%>
-    <p><%=link_to 'Edit', edit_tweet_path(@tweet) %></p>
-    <p><%=link_to 'Delete', tweet_path(@tweet), method: :delete, data: { confirm: "Are you sure you want to delete?"} %></p>
-<%end%>
-
+<div class="bodyIndexTweet">
+        <%=react_component("Sidebar/Sidebar", {logout: logout_path}, class: "bodyIndexLeft")%>
+    <div class="bodyIndexMid">
+        <div class="bodyIndexMid__label">Thread</div>
+        <div class="bodyIndexMid__mainForm">
+            <%=react_component("MainForm/MainForm", prerender: true)%>
+        </div>
+        <%= render 'single'%>
+    </div>
+    <div class="bodyIndexRight">
+        <div class="bodyIndexRight__main">
+            <%=react_component("Search/Search", prerender: true)%>
+            <div class="category__index">
+                <%=react_component("Trending/Trending", {topics: @topics})%>
+            </div>
+            <div class="users__index">
+                <%=react_component("Followers/Followers", {users: @users})%>
+            </div>
+        </div>
+    </div>
+</div>

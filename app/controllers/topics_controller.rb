@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
+  before_action :navigation
 
   def index
-    @topics = Topic.all
   end
 
   def new
@@ -27,4 +27,10 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(:topic)
   end
+
+  def navigation
+    @topics = Topic.all
+    @users = User.all
+  end
+
 end

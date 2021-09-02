@@ -9,17 +9,19 @@ const Followers = (props) => {
             <ul className={classes.list}>
                 {props.users.map(user=>{
                     return(
-                        <li className={classes.listItems} key={user.email}>
-                            <CgProfile size={20}/>
-                            <div className={classes.listItemText}>
-                                <span className={classes.listItemName}>{user.username}</span>
-                                <span>{user.email}</span>
-                            </div>
-                        </li>
+                        <a href={`/users/${user.id}`} key={user.email}>
+                            <li className={classes.listItems}>
+                                <CgProfile size={20}/>
+                                <div className={classes.listItemText}>
+                                    <span className={classes.listItemName}>{user.username}</span>
+                                    <span>{user.email}</span>
+                                </div>
+                            </li>
+                        </a>
                     )
                 })}
             </ul>
-            <div className={classes.showMore}>See More</div>
+            <a href="/users" className={classes.showMore}>See More</a>
         </div>
     )
 }

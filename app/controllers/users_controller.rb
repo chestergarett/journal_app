@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
+  before_action :navigation
   before_action :setup, only: [:show, :edit, :update, :destroy]
   before_action :require_user, only: [:edit, :update]
   before_action :require_same_user, only: [:edit, :update]
 
   def index
-    @users = User.all
   end
 
   def show
@@ -44,6 +44,11 @@ class UsersController < ApplicationController
 
   def setup
     @user = User.find(params[:id])
+  end
+
+  def navigation
+    @topics = Topic.all
+    @users = User.all
   end
   
   def user_params

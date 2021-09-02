@@ -1,12 +1,10 @@
 class TweetsController < ApplicationController
+  before_action :navigation
   before_action :setup, only: [:show, :edit, :update, :destroy]
   before_action :require_user
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
-    @tweets = Tweet.all
-    @topics = Topic.all
-    @users = User.all
   end
 
   def show
@@ -48,6 +46,12 @@ class TweetsController < ApplicationController
 
   def setup
     @tweet = Tweet.find(params[:id])
+  end
+
+  def navigation
+    @tweets = Tweet.all
+    @topics = Topic.all
+    @users = User.all
   end
 
   def tweet_params
