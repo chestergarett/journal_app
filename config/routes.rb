@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy', to: 'sessions#destroy'
   
-  resources :tweets
+  resources :tweets do
+    resources :replies
+  end
+
   resources :topics
-  resources :replies
+
 
   get '*path', to: 'pages#home', via: :all
 end

@@ -1,0 +1,9 @@
+<%= form_with(model: @user, local: true, class: "user_new_input") do |f|%>
+    <%=f.text_field :username, placeholder: "Edit Username", class: "user_new_input_items" %>
+    <%=f.email_field :email, placeholder: "Edit Email", class: "user_new_input_items"%>
+    <%=f.password_field :password, placeholder: "Change Password", class: "user_new_input_items"%>
+    <div class="tweet_icon_containers">
+        <%=react_component("MainTweet/LinksModal", prerender: true)%>
+        <%=f.submit "Update Profile", class:"user_update_button"%>
+    </div>
+<%end%>

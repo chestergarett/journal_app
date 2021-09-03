@@ -39,4 +39,17 @@
      top: 5%;
      left: 25%;
      color: #00acee;
+     -webkit-animation: hide 2s forwards; 
+    animation: hide 2s forwards;
  }
+
+@keyframes hide {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes hide {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}

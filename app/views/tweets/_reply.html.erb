@@ -1,0 +1,26 @@
+<div class="reply_container">
+    <div class="reply__main">
+        <%if @tweet.replies.any?%>
+            <table>
+                <tr style="text-align: left">
+                    <th>Assigned by</th>
+                    <th>Message</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <%@tweet.replies.each do |reply|%>
+                    <tr style="font-size: 12px">
+                        <td>@<%=reply.user.username%></td>
+                        <td><%=reply.reply%></td>
+                        <td><%=reply.status%></td>
+                        <td><%=reply.duedate.strftime("%B %d, %Y")%></td>
+                        <td><%=link_to "Edit", edit_tweet_reply_path(@tweet)%>
+                        <td><%=link_to "Delete", tweet_reply_path(@tweet), method: :delete, data: { confirm: "Are you sure?"}%></td>
+                    </tr>
+                <%end%>
+            </table>
+        <%end%>
+    </div>
+</div>

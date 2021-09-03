@@ -4,7 +4,7 @@
             <%=react_component("MainTweet/Avatar", prerender: true)%>
             <%=link_to tweet_path(tweet), class:"tweet_container_user" do %>
                 <div class="tweet_container_user_head">
-                    <span class="tweet_user"><%=tweet.user.username%></span>
+                    <span class="tweet_user">@<%=tweet.user.username%></span>
                     <span class="tweet_time_ago"><%= time_ago_in_words(tweet.created_at)%></span>
                 </div>
                 <div>
@@ -22,10 +22,3 @@
         </div>
     </div>
 <%end%>
-
-
-<%if logged_in? %>
-    <p><%=link_to 'Logout', logout_path, method: :delete %></p>
-<%else%>
-    <p><%=link_to 'Login', login_path %></p>
-<%end%> 

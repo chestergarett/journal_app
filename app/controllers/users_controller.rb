@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :navigation
   before_action :setup, only: [:show, :edit, :update, :destroy]
-  before_action :require_user, only: [:edit, :update]
+  before_action :require_user, except: [:new, :create]
   before_action :require_same_user, only: [:edit, :update]
 
   def index
@@ -20,7 +20,6 @@ class UsersController < ApplicationController
     
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Successfully signed up"
       redirect_to users_path
     else
       render :new
@@ -28,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @tweets = @user.tweets
   end
 
 
@@ -48,7 +48,9 @@ class UsersController < ApplicationController
 
   def navigation
     @topics = Topic.all
+    @topics_top = Topic.all.limit(5)
     @users = User.all
+    @users_top = User.all.limit(5)
   end
   
   def user_params

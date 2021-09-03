@@ -5,11 +5,11 @@ import {FaRetweet} from 'react-icons/fa';
 import {AiOutlineHeart} from 'react-icons/ai';
 import {FaShare} from 'react-icons/fa';
 
-const Links = () => {
+const Links = (props) => {
     
     return (
         <div className={classes.main}>
-            <BsChat size={15} className={classes.icons}/>
+            <a href={props.reply_path}><BsChat size={15} className={classes.icons}/></a>
             <FaRetweet size={15} className={classes.icons}/>
             <AiOutlineHeart size={15} className={classes.icons}/>
             <FaShare size={15} className={classes.icons}/>

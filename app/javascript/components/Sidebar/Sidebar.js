@@ -37,25 +37,25 @@ const Sidebar = (props) => {
                     <BiSpreadsheet size={30} className={classes.icons}/>
                     <span>Lists</span>
                 </div>
-                <div className={classes.items}>
+                <a className={classes.items} href={props.profile}>
                     <CgProfile size={30} className={classes.icons}/>
                     <span>Profile</span>
-                </div>
+                </a>
                 <div className={classes.items}>
                     <CgMoreO size={30} className={classes.icons}/>
                     <span>More</span>
                 </div>
-                <div className={classes.items2}>
+                <a className={classes.items2} href={props.new}>
                     <button className={classes.itemButton}>Bweet</button>
-                </div>
+                </a>
             </div>
             <div className={classes.lowerSidebar}>
                 <div className={classes.profilePicture}>
                     <CgProfile size={30}/>
                 </div>
                 <div className={classes.profileDetails}>
-                    <div>Username &nbsp;<FaLock size={15}/></div>
-                    <div>Email {props.logout}</div>
+                    <div>{props.username} &nbsp;<FaLock size={15}/></div>
+                    <div>{props.email}</div>
                 </div>
             </div>
         </div>

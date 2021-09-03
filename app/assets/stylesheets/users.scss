@@ -202,4 +202,74 @@ input:-webkit-autofill:active
     margin-right: 1rem;
 }
 
+/****** users show page ****/
+.bodyIndexMid__profile{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bodyIndexMid__profileLabel{
+    display: flex;
+    flex-direction: column;
+}
+
+.bodyIndexMid__profileLabel_email{
+    font-size: 12px;
+    margin-left: 1rem;
+    margin-top: .3rem;
+}
+
+.bodyIndexMid__profileLabel_user{
+    color: #00acee;
+}
+
+.bodyIndexMid__profileLabel_button{
+    border: none;
+    border-radius: 9999px;
+    padding: .5rem;
+    width: 6rem;
+    cursor: pointer;
+}
+
+/*******CRUD FORMS **************/
+.user_new_modal {
+    position: fixed;
+    background: #36454F;
+    border-radius: 15px;
+    top: 20%;
+    left: 30%;
+    width: 35%;
+    min-height: 30%;
+}    
+
+.user_new_input{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.user_new_input_items{
+    border: none;
+    margin-bottom: .5rem;
+    background: transparent;
+    color: white;
+}
+
+.user_new_input input{
+    margin-left: .5rem;
+    min-height: 2rem;
+    resize: none;
+    border: none;
+}
+
+.user_update_button{
+    border-radius: 9999px;
+    border: none;
+    padding: .5rem;
+    margin-left: -2rem;
+    min-width: 5rem;
+    cursor: pointer;
+}
+
 

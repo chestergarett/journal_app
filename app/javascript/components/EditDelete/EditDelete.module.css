@@ -1,0 +1,13 @@
+.editDelete{
+    display: flex;
+}
+
+.edit{
+    margin-right: .5rem;
+    color: #00acee;
+}
+
+.delete{
+    margin-right: .5rem;
+    color: #A52A2A;
+}

@@ -2,6 +2,7 @@ class User < ApplicationRecord
   before_save { self.email = email.downcase }
 
   has_many :tweets
+  has_many :replies
   validates :username, presence: true,
                         uniqueness: {case_sensitive: false},
                         length: {minimum: 3, maximum: 25}

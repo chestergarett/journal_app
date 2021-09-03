@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_action :navigation
+  before_action :require_user
 
   def index
   end
@@ -30,7 +31,8 @@ class TopicsController < ApplicationController
 
   def navigation
     @topics = Topic.all
+    @topics_top = Topic.all.limit(5)
     @users = User.all
+    @users_top = User.all.limit(5)
   end
-
 end

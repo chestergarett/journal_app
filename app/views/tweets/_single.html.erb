@@ -4,7 +4,7 @@
             <%=link_to tweet_path(@tweet), class:"tweet_container_user" do %>
                 <div class="tweet_container_user_head">
                     <span class="tweet_user"><%=@tweet.user.username%></span>
-                    <span class="tweet_time_ago"><%= time_ago_in_words(@tweet.created_at)%></span>
+                    <span class="tweet_time_ago"><%= time_ago_in_words(@tweet.created_at)%> ago</span>
                 </div>
                 <div>
                     <%=@tweet.tweet%>
@@ -15,14 +15,16 @@
                     <%end%>
                 </div>
             <%end%>
+            <div class="tweet_editDelete">
+                <% if logged_in? && @tweet.user==current_user%>
+                    <%=react_component("EditDelete/Edit", {edit: edit_tweet_path(@tweet)})%>
+                    <%=link_to tweet_path(@tweet), method: :delete, data: { confirm: "Are you sure you want to delete?"} do%>
+                        <%react_component("EditDelete/Delete", {delete: :delete})%>
+                    <%end%>
+                <%end%>
+            </div>
         </div>
         <div class="tweet_container_icons">
-            <%=react_component("MainTweet/Links", prerender: true)%>
+            <%=react_component("MainTweet/Links", {reply_path: new_tweet_reply_path(@tweet)})%>
         </div>
     </div>
-
-    <p><%=link_to 'New', new_tweet_path %></p>
-<% if logged_in? && @tweet.user==current_user%>
-    <p><%=link_to 'Edit', edit_tweet_path(@tweet) %></p>
-    <p><%=link_to 'Delete', tweet_path(@tweet), method: :delete, data: { confirm: "Are you sure you want to delete?"} %></p>
-<%end%>

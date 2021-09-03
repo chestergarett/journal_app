@@ -1,0 +1,22 @@
+<div class="signupBackdrop">
+    <div class="tweet_new_modal">
+        <div class="tweet_new_close">
+            <%=link_to 'x', tweets_path %>
+        </div>
+        <div class="tweet_new_main">
+            <% if @reply.errors.any?%>
+                    <ul class="signupErrors">
+                        <%@reply.errors.full_messages.each do |msg| %>
+                            <li><%= msg%></li>
+                        <%end %>
+                    </ul>
+            <%end%>
+            <div class="tweet_new_main_form">
+                <div class="tweet_new_avatar">
+                    <%=react_component("MainTweet/Avatar", prerender: true)%>
+                </div>
+                <%=render 'form'%>
+            </div>
+        </div>
+    </div>
+</div>

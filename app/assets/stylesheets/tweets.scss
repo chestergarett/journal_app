@@ -77,6 +77,7 @@
 .tweet_container_user_head{
     display: flex;
     margin-bottom: .5rem;
+    justify-content: space-between;
 }
 
 .tweet_user{
@@ -91,4 +92,100 @@
 
 .tweet_topic{
     color: #00acee;
+}
+
+.tweet_editDelete{
+    display: flex;
+    margin-left: 25rem;
+    margin-top: -1rem;
+}
+
+/******* CRUD MODAL **************/
+
+/***new tweet***/
+.tweet_new_modal{
+    position: fixed;
+    background: #36454F;
+    border-radius: 15px;
+    top: 20%;
+    left: 30%;
+    width: 30%;
+    min-height: 30%;
+}
+
+.tweet_new_close{
+    display: flex;
+    border-bottom: 1px solid black;
+    width: 100%;
+    padding: 1rem;
+}
+
+.tweet_new_main_form{
+    display: flex;
+    margin: 1rem;
+    width: 100%;
+}
+
+.tweet_new_input{
+    display: flex;
+    flex-direction: column;
+    margin-left: .5rem;
+    width: 80%;
+}
+
+.tweet_new_input_items{
+    margin-bottom: .5rem;
+    background: transparent;
+    color: white;
+}
+
+.tweet_new_input textarea{
+    min-height: 3rem;
+    resize: none;
+    border: none;
+}
+
+.tweet_new_input textarea:focus,
+.tweet_new_input select:focus{
+    outline: 1px solid #00acee;
+    border: none;
+}
+
+.tweet_new_input select option:first-child{
+    color: gray;
+}
+
+.tweet_icon_containers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tweet_new_button{
+    border-radius: 9999px;
+    border: none;
+    padding: .5rem;
+    min-width: 5rem;
+    cursor: pointer;
+}
+
+.tweet_new_button:hover{
+    background: #00acee;
+    color: white;
+}
+
+/*******REPLY CONTAINERS **********/
+
+.reply_container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    border-bottom: 1px solid #36454F;
+}
+
+.reply__main{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
 }

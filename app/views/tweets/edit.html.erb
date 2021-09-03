@@ -1,28 +1,41 @@
-<h1>edit tweet </h1>
-<p>by: <%=@tweet.user.email%></p>
+<div class="signupBackdrop">
+    <div class="tweet_new_modal">
+        <div class="tweet_new_close">
+            <%=link_to 'x', tweet_path(@tweet) %>
+        </div>
+        <div class="tweet_new_main">
+            <div class="tweet_new_main_form">
+                <div class="tweet_new_avatar">
+                    <%=react_component("MainTweet/Avatar", prerender: true)%>
+                </div>
+                <% if @tweet.errors.any?%>
+                    <ul class="signupErrors">
+                        <%@tweet.errors.full_messages.each do |msg| %>
+                            <li><%= msg%></li>
+                        <%end %>
+                    </ul>
+                <%end%>
+                <%=render 'form'%>
+            </div>
+        </div>
+    </div>
+</div>
 
-<% if @tweet.errors.any?%>
-    <h4> Errors in tweeting </h4>
-    <ul>
-        <%@tweet.errors.full_messages.each do |msg| %>
-            <li><%= msg%></li>
-        <%end %>
-    </ul>
-<%end%>
-<%= form_with(model: @tweet, local: true) do |f|%>
-
-    <p>
-        <%=f.label :tweet%>
-        <%=f.text_area :tweet%>
-    </p>
-
-    <p>
-        <%=f.label :topic%>
-        <%=f.collection_select(:topic_ids, Topic.all, :id, :topic, {prompt: "Make selection from list below"}, {multiple: true})%>
-    </p>
-
-    <button>Edit</button>
-<%end%>
-<p><%=link_to 'Show all', tweets_path%> </p>
-
-
+<div class="bodyIndexTweet">
+        <%=react_component("Sidebar/Sidebar", {logout: logout_path}, class: "bodyIndexLeft")%>
+    <div class="bodyIndexMid">
+        <div class="bodyIndexMid__label">Thread</div>
+        <%= render 'single'%>
+    </div>
+    <div class="bodyIndexRight">
+        <div class="bodyIndexRight__main">
+            <%=react_component("Search/Search", prerender: true)%>
+            <div class="category__index">
+                <%=react_component("Trending/Trending", {topics: @topics})%>
+            </div>
+            <div class="users__index">
+                <%=react_component("Followers/Followers", {users: @users})%>
+            </div>
+        </div>
+    </div>
+</div>

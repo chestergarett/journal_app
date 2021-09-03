@@ -1,0 +1,9 @@
+<%= form_with(model: @topic, class: "tweet_new_input", local:true) do  |f| %>
+    <% if logged_in?%>
+            <%= f.text_area :topic, class: "user_new_input_items", placeholder: "Add new topic" %>
+        <div class="tweet_icon_containers_topic">
+            <%=react_component("MainTweet/LinksModal", prerender: true)%>
+            <%= f.submit class: "user_update_button" %>
+        </div>
+    <%end%>
+<%end%>

@@ -15,3 +15,30 @@
 .topics_index h2{
     color: #00acee;
 }
+
+.topic_show{
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.topic_show_main{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.topic_username{
+    font-size: 15px;
+    color: #00acee;
+    margin-bottom: .5rem;
+}
+
+.tweet_icon_containers_topic{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}

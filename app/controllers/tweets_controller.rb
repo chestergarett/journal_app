@@ -21,7 +21,8 @@ class TweetsController < ApplicationController
       flash[:notice] = "Tweet has been posted"
       redirect_to @tweet
     else
-      render :home
+      flash[:alert] = "Invalid inputs. Please check form."
+      render :new
     end
   end
 
@@ -33,7 +34,7 @@ class TweetsController < ApplicationController
       flash[:notice] = "Successfully updated tweet."
       redirect_to @tweet
     else
-      render 'edit'
+      render :edit
     end
   end
 
@@ -50,7 +51,9 @@ class TweetsController < ApplicationController
 
   def navigation
     @tweets = Tweet.all
+    @topics_top = Topic.all.limit(5)
     @topics = Topic.all
+    @users_top = User.all.limit(5)
     @users = User.all
   end
 
@@ -65,5 +68,3 @@ class TweetsController < ApplicationController
     end
   end
 end
-
-

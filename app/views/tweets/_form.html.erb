@@ -1,0 +1,8 @@
+<%= form_with scope: :tweet, url: tweets_path, class: "tweet_new_input", local: true do |f|%>
+    <%=f.text_area :tweet, placeholder: "What's happening?", class: "tweet_new_input_items" %>
+    <%=f.collection_select(:topic_ids, Topic.all, :id, :topic, {prompt: "Choose topic"}, {class: "tweet_new_input_items", multiple:true})%>
+    <div class="tweet_icon_containers">
+        <%=react_component("MainTweet/LinksModal", prerender: true)%>
+        <%= f.submit "Bweet", class: "tweet_new_button" %>
+    </div>
+<%end%>

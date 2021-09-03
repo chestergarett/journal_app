@@ -1,34 +1,57 @@
-<h1>Edit your profile</h1>
+<div class="signupBackdrop">
+    <div class="user_new_modal">
+        <div class="tweet_new_close">
+            <%=link_to 'x', user_path(@user) %>
+        </div>
+        <div class="tweet_new_main">
+            <div class="tweet_new_main_form">
+                <div class="tweet_new_avatar">
+                    <%=react_component("MainTweet/Avatar", prerender: true)%>
+                </div>
+                <% if @user.errors.any?%>
+                    <ul class="signupErrors">
+                        <%@user.errors.full_messages.each do |msg| %>
+                            <li><%= msg%></li>
+                        <%end %>
+                    </ul>
+                <%end%>
+                <%=render 'form'%>
+            </div>
+        </div>
+    </div>
+</div>
 
-<% if @user.errors.any?%>
-    <h4> Errors in signing up </h4>
-    <ul>
-        <%@user.errors.full_messages.each do |msg| %>
-            <li><%= msg%></li>
-        <%end %>
-    </ul>
-<%end%>
-<%= form_with(model: @user, local: true) do |f|%>
-
-    <p>
-        <%=f.label :username %>
-        <%=f.text_field :username %>
-    </p>
-
-    <p>
-        <%=f.label :email%>
-        <%=f.email_field :email%>
-    </p>
-
-    <p>
-        <%=f.label :password %>
-        <%=f.password_field :password %>
-    </p>
-
-    <button>Edit profile</button>
-<%end%>
-
-<p><%=link_to 'root', tweets_path %></p>
-
-
-
+<div class="bodyIndexTweet">
+        <%=react_component("Sidebar/Sidebar", {logout: logout_path}, class: "bodyIndexLeft")%>
+    <div class="bodyIndexMid">
+        <div class="bodyIndexMid__label">
+            <div class="bodyIndexMid__profile">
+                <div class="bodyIndexMid__profileLabel">
+                    <span class="bodyIndexMid__profileLabel_user">@<%=@user.username%></span>
+                    <span class="bodyIndexMid__profileLabel_email"><%=@user.email%></span>
+                </div>
+                <div class="bodyIndexMid__profileButton">
+                    <% if @user == current_user %>
+                        <%= link_to edit_user_path(@user) do%>
+                            <button class="bodyIndexMid__profileLabel_button">Edit Profile</button>
+                        <%end%>
+                    <% else %>
+                        <button class="bodyIndexMid__profileLabel_button">Follow</button>
+                    <%end%>
+                </div>
+            </div>
+        </div>
+        <%=render 'tweets/tweet'%>
+    </div>
+    <div class="bodyIndexRight">
+        <div class="bodyIndexRight__main">
+            <%=react_component("Search/Search", prerender: true)%>
+            <div class="category__index">
+                <%=react_component("Trending/Trending", {topics: @topics})%>
+            </div>
+            <div class="users__index">
+                <%=react_component("Followers/Followers", {users: @users})%>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,29 +1,47 @@
-<h1>show new tweet </h1>
+<div class="signupBackdrop">
+    <div class="tweet_new_modal">
+        <div class="tweet_new_close">
+            <%=link_to 'x', tweets_path %>
+        </div>
+        <div class="tweet_new_main">
+            <div class="tweet_new_main_form">
+                <div class="tweet_new_avatar">
+                    <%=react_component("MainTweet/Avatar", prerender: true)%>
+                </div>
+                <div class='flash_message'>
+                    <% flash.each do |name,msg| %>
+                        <%=msg%>
+                    <%end%>
+                </div>
+                <%=render 'form'%>
+            </div>
+        </div>
+    </div>
+</div>
 
-<% if @tweet.errors.any?%>
-    <h4> Errors in tweeting </h4>
-    <ul>
-        <%@tweet.errors.full_messages.each do |msg| %>
-            <li><%= msg%></li>
-        <%end %>
-    </ul>
-<%end%>
-<%= form_with scope: :tweet, url: tweets_path, local: true do |f|%>
-
-    <p>
-        <%=f.label :tweet%>
-        <%=f.text_area :tweet%>
-    </p>
-
-    <p>
-        <%=f.label :topic%>
-        <%=f.collection_select(:topic_ids, Topic.all, :id, :topic, {prompt: "Make selection from list below"}, {multiple: true})%>
-    </p>
-
-    <button>Post</button>
-<%end%>
-
-<p><%=link_to 'All tweets', tweets_path %></p>
-
-
-
+<div class="bodyIndexTweet">
+        <%=react_component("Sidebar/Sidebar", {logout: logout_path, profile: user_path(@current_user.id), new: new_tweet_path, username: @current_user.username, email: @current_user.email}, class: "bodyIndexLeft")%>
+    <div class="bodyIndexMid">
+        <div class="bodyIndexMid__label">Home</div>
+        <div class="bodyIndexMid__mainForm">
+            <%=react_component("MainForm/MainForm", prerender: true)%>
+        </div>
+        <%= render 'tweet'%>
+    </div>
+    <div class="bodyIndexRight">
+        <div class="bodyIndexRight__main">
+            <%=react_component("Search/Search", prerender: true)%>
+            <div class="category__index">
+                <%=react_component("Trending/Trending", {topics: @topics_top ,new: new_topic_path})%>
+            </div>
+            <div class="users__index">
+                <%=react_component("Followers/Followers", {users: @users_top})%>
+            </div>
+            <%if logged_in? %>
+                <p style="font-size: 12px; color: red; text-align: right"><%=link_to 'Logout', logout_path, method: :delete %></p>
+            <%else%>
+                <p><%=link_to 'Login', login_path %></p>
+            <%end%>
+        </div>
+    </div>
+</div>

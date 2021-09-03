@@ -1,25 +1,23 @@
 <div class="bodyIndexTweet">
-        <%=react_component("Sidebar/Sidebar", {logout: logout_path}, class: "bodyIndexLeft")%>
+        <%=react_component("Sidebar/Sidebar", {logout: logout_path, profile: user_path(@current_user.id), new: new_tweet_path, username: @current_user.username, email: @current_user.email}, class: "bodyIndexLeft")%>
     <div class="bodyIndexMid">
         <div class="bodyIndexMid__label">Trends</div>
-        <%@topics.each do |topic|%>
-        <div class="bodyIndexMid__mainForm">
-            <%=link_to topic_path(topic), class: "topics_index" do%>
-                <h2>#<%=topic.topic%></h2>
-                <span><%=topic.tweets.count%>&nbsp; Bweets</span>
-            <%end%>
-        </div>  
-        <%end%>  
+         <%=render 'single'%>
     </div>
     <div class="bodyIndexRight">
         <div class="bodyIndexRight__main">
             <%=react_component("Search/Search", prerender: true)%>
             <div class="category__index">
-                <%=react_component("Trending/Trending", {topics: @topics})%>
+                <%=react_component("Trending/Trending", {topics: @topics_top ,new: new_topic_path})%>
             </div>
             <div class="users__index">
-                <%=react_component("Followers/Followers", {users: @users})%>
+                <%=react_component("Followers/Followers", {users: @users_top})%>
             </div>
+            <%if logged_in? %>
+                <p style="font-size: 12px; color: red; text-align: right"><%=link_to 'Logout', logout_path, method: :delete %></p>
+            <%else%>
+                <p><%=link_to 'Login', login_path %></p>
+            <%end%>
         </div>
     </div>
 </div>
