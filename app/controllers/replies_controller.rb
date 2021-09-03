@@ -1,6 +1,6 @@
 class RepliesController < ApplicationController
   before_action :navigation
-  before_action :setup, only: [:show, :edit, :update, :destroy]
+  before_action :setup, only: [:show, :new, :edit, :update, :destroy]
   before_action :require_user
 
   def index
@@ -15,10 +15,9 @@ class RepliesController < ApplicationController
     @reply.user_id = current_user.id
     @reply.tweet_id = params[:tweet_id]
     if @reply.save
-      flash[:notice] = "Tweet has been posted"
       redirect_to tweets_path
     else
-      render :new
+      redirect_to tweets_path
     end
   end
 
@@ -43,14 +42,15 @@ class RepliesController < ApplicationController
   private
 
   def setup
-    @reply = Reply.find(params[:id])
+    @tweet = Tweet.find(params[:tweet_id])
+    @reply = Tweet.replies.each{ |reply| reply.id}
   end
 
   def navigation
-    @tweets = Tweet.all
-    @topics = Topic.all
-    @users = User.all
-    @replies = Reply.all
+    @tweets = Tweet.all.order('created_at DESC')
+    @topics = Topic.all.order('created_at DESC')
+    @users = User.all.order('created_at DESC')
+    @replies = Reply.all.order('created_at DESC')
   end
 
   def reply_params

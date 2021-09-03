@@ -189,3 +189,30 @@
     margin-bottom: 1rem;
     margin-left: 3rem;
 }
+
+.reply_new_input input{
+    margin-bottom: .5rem;
+    background: transparent;
+    color: white;
+    border: 1px solid gray;
+}
+
+.reply_new_input select{
+    margin-bottom: .5rem;
+    background: transparent;
+    color: white;
+}
+
+.reply_new_input input:focus,
+.reply_new_input textarea:focus,
+.reply_new_input select:focus{
+    outline: 1px solid #00acee;
+    border: none;
+}
+
+.reply_new_input{
+    display: flex;
+    flex-direction: column;
+    margin-left: .5rem;
+    width: 80%;
+}

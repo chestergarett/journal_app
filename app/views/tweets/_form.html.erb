@@ -1,4 +1,4 @@
-<%= form_with scope: :tweet, url: tweets_path, class: "tweet_new_input", local: true do |f|%>
+<%= form_with(model: @tweet, class: "tweet_new_input", local:true) do |f|%>
     <%=f.text_area :tweet, placeholder: "What's happening?", class: "tweet_new_input_items" %>
     <%=f.collection_select(:topic_ids, Topic.all, :id, :topic, {prompt: "Choose topic"}, {class: "tweet_new_input_items", multiple:true})%>
     <div class="tweet_icon_containers">

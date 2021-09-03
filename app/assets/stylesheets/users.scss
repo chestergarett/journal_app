@@ -272,4 +272,15 @@ input:-webkit-autofill:active
     cursor: pointer;
 }
 
+.replyBackdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 20;
+    background-color: rgba(0,0,0,.3);
+    color: white;
+}
+
 

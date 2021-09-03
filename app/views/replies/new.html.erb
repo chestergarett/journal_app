@@ -1,7 +1,7 @@
-<div class="signupBackdrop">
+<div class="replyBackdrop">
     <div class="tweet_new_modal">
         <div class="tweet_new_close">
-            <%=link_to 'x', tweets_path %>
+            <%=link_to 'x', tweet_path(@tweet) %>
         </div>
         <div class="tweet_new_main">
             <% if @reply.errors.any?%>

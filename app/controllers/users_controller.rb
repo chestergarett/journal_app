@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   def navigation
     @topics = Topic.all
     @topics_top = Topic.all.limit(5)
-    @users = User.all
+    @users = User.all.order('created_at DESC')
     @users_top = User.all.limit(5)
   end
   

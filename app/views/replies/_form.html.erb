@@ -1,7 +1,7 @@
-<%= form_with scope: :reply, url: tweet_replies_path, class: "tweet_new_input", local: true do |f|%>
+<%= form_with scope: :reply, url: tweet_replies_path, class: "reply_new_input", local: true do |f|%>
     <%=f.text_area :reply, placeholder: "Reply here", class: "tweet_new_input_items" %>
-    <%=f.datetime_field :duedate, min: Date.today%>
-    <%=f.select :status, ["Not Started", "Ongoing", "On Hold", "Completed"]%>
+    <%=f.datetime_field :duedate, min: Date.today, class: "tweet_new_input_items"%>
+    <%=f.select :status, ["Not Started", "Ongoing", "On Hold", "Completed"], class: "tweet_new_input_items"%>
     <div class="tweet_icon_containers">
         <%=react_component("MainTweet/LinksModal", prerender: true)%>
         <%= f.submit "Reply", class: "tweet_new_button" %>

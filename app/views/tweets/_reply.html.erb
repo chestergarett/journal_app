@@ -16,8 +16,8 @@
                         <td><%=reply.reply%></td>
                         <td><%=reply.status%></td>
                         <td><%=reply.duedate.strftime("%B %d, %Y")%></td>
-                        <td><%=link_to "Edit", edit_tweet_reply_path(@tweet)%>
-                        <td><%=link_to "Delete", tweet_reply_path(@tweet), method: :delete, data: { confirm: "Are you sure?"}%></td>
+                        <td><%=link_to "Edit", edit_tweet_reply_path(reply.id)%>
+                        <td><%=link_to "Delete", tweet_reply_path(reply.id), method: :delete, data: { confirm: "Are you sure?"}%></td>
                     </tr>
                 <%end%>
             </table>

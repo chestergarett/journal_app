@@ -50,11 +50,11 @@ class TweetsController < ApplicationController
   end
 
   def navigation
-    @tweets = Tweet.all
+    @tweets = Tweet.all.order('created_at DESC')
     @topics_top = Topic.all.limit(5)
     @topics = Topic.all
     @users_top = User.all.limit(5)
-    @users = User.all
+    @users = User.all.order('created_at DESC')
   end
 
   def tweet_params
