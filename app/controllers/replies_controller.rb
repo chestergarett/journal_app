@@ -1,12 +1,13 @@
 class RepliesController < ApplicationController
   before_action :navigation
-  before_action :setup, only: [:show, :new, :edit, :update, :destroy]
+  before_action :setup, only: [:show, :edit, :update, :destroy]
   before_action :require_user
 
   def index
   end
 
   def new
+    @tweet = Tweet.find(params[:tweet_id])
     @reply = Reply.new
   end
 
@@ -43,7 +44,7 @@ class RepliesController < ApplicationController
 
   def setup
     @tweet = Tweet.find(params[:tweet_id])
-    @reply = Tweet.replies.each{ |reply| reply.id}
+    @reply = Reply.find(params[:id])
   end
 
   def navigation
