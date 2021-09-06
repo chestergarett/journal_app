@@ -10,7 +10,7 @@ sample credentials:
 
 ***** suggest to 1) git clone 2) bundle install 3) rails s to view the current page for now.
 
-****** front end index page was done using REACT via react-rails gem, backend developed using RAILS ***************
+****** front end was done using REACT via react-rails gem, backend developed using RAILS ***************
 
 
 ![image](https://user-images.githubusercontent.com/71489331/132211443-3c7c2b6c-8871-4bfd-99d4-01b48b39d788.png)
